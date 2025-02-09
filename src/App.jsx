@@ -5,7 +5,7 @@ import AddTask from "./pages/AddTask"
 
 function App() {
   return (
-    <div className="p-4 bg-blue-100 h-screen flex gap-2">
+    <div className=" bg-blue-50 h-screen flex flex-col md:flex-row gap-5 w-full">
       <Sidebar/>
       <Outlet/>
     </div>
