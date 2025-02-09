@@ -9,35 +9,43 @@ import AddTaskImg from "../assets/AddTaskImg.svg"
 import Dropdown from "../components/Add Task/Dropdown";
 import Error from "../components/Add Task/Error";
 import validateForm from "../customHook/ValidateNewTask";
+import { useAddTaskMutation } from "../RTK query/apiSlice";
 
 function AddTask() {
 
   const [newTask, setNewTask] = useState({
-    taskId: "",
+    id: crypto.randomUUID(),
     title: "",
     description: "",
     status: "Pending",
     category: ""
   })
 
+  let [addTask, addTaskResult] = useAddTaskMutation();
+  const {isSuccess} = addTaskResult;
+  
   const [error, setError] = useState({
     title: "",
     description: "",
     category: ""
   })
 
-  function handleSubmit(){
+  async function handleSubmit(){
     const validationResult = validateForm(newTask, setError)   
 
     if(Object.keys(validationResult).length) return
 
-    console.log(newTask);
+    await addTask(newTask);
+
+    if(isSuccess){
+      resetForm()
+    }
   }
 
 
   function resetForm(){
     setNewTask({
-      taskId: "",
+      id: "",
       title: "",
       description: "",
       status: "Pending",
