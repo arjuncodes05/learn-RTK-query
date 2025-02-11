@@ -3,18 +3,19 @@ import Label from "../components/Add Task/Label";
 import Input from "../components/Add Task/Input";
 import TextArea from "../components/Add Task/TextArea";
 import Status from "../components/Add Task/Status";
-import Button from "../components/Add Task/Button";
+import Button from "../components/Button";
 
 import AddTaskImg from "../assets/AddTaskImg.svg"
 import Dropdown from "../components/Add Task/Dropdown";
 import Error from "../components/Add Task/Error";
 import validateForm from "../customHook/ValidateNewTask";
-import { useAddTaskMutation } from "../RTK query/apiSlice";
+import { useAddTaskMutation, useGetTasksQuery } from "../RTK query/apiSlice";
 
 function AddTask() {
 
+  const {data} = useGetTasksQuery()
+
   const [newTask, setNewTask] = useState({
-    id: crypto.randomUUID(),
     title: "",
     description: "",
     status: "Pending",
@@ -22,8 +23,7 @@ function AddTask() {
   })
 
   let [addTask, addTaskResult] = useAddTaskMutation();
-  const {isSuccess} = addTaskResult;
-  
+
   const [error, setError] = useState({
     title: "",
     description: "",
@@ -35,17 +35,16 @@ function AddTask() {
 
     if(Object.keys(validationResult).length) return
 
-    await addTask(newTask);
+    const createdOn = new Date().toLocaleString();
+    const completedOn = newTask.status === 'Pending' ? 'Pending' : createdOn
 
-    if(isSuccess){
-      resetForm()
-    }
+    await addTask({...newTask, createdOn, completedOn, id: (data.length ? `${data.length + 1}` : '1')});
+    resetForm()
   }
 
 
   function resetForm(){
     setNewTask({
-      id: "",
       title: "",
       description: "",
       status: "Pending",
@@ -83,9 +82,9 @@ function AddTask() {
           <Error error={error?.category}/>
         </div>
 
-        <div className="space-x-5">
-        <Button text="Add" onClick={handleSubmit}/>
-        <Button text="Reset" onClick={resetForm}/>
+        <div className="space-x-5 flex">
+          <Button text="Add" onClick={handleSubmit} bg="bg-blue-400" onHover="hover:bg-blue-500"/>
+          <Button text="Reset" onClick={resetForm} bg="bg-red-500" onHover="hover:bg-blue-600"/>
         </div>
 
 

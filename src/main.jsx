@@ -1,17 +1,24 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import AddTask from './pages/AddTask.jsx'
+import "./index.css"
+
+// RTK query
 import { ApiProvider } from '@reduxjs/toolkit/query/react'
 import apiSlice from './RTK query/apiSlice.js'
+
+// components
+import App from './App.jsx'
+import AddTask from './pages/AddTask.jsx'
+import Daily from './pages/Daily.jsx'
 
 createRoot(document.getElementById('root')).render(
   <ApiProvider api={apiSlice}>
       <BrowserRouter>
         <StrictMode>
           <Routes>
-            <Route path="/" element={<App/>} >
+            <Route path="" element={<App/>} >
+              <Route path="/" element={<Daily/>} />
               <Route path="/new" element={<AddTask/>} />
               <Route path="/weekly" element={<h1>Weekly tasks</h1>} />
               <Route path="/yearly" element={<h1>Yearly tasks</h1>} />

@@ -1,18 +1,31 @@
 {
   "tasks": [
     {
-      "id": "",
-      "title": "Cook",
-      "description": "Make breakfast",
-      "status": "Pending",
-      "category": "Daily"
+      "id": "4",
+      "title": "haha",
+      "description": "buhahha",
+      "status": "Completed",
+      "category": "Weekly",
+      "createdOn": "2/11/2025, 9:11:00 PM",
+      "completedOn": "2/11/2025, 9:11:00 PM"
     },
     {
-      "id": "",
-      "title": "asdasda",
-      "description": "asdasd sadasd asd asd asd asd",
-      "status": "Completed",
-      "category": "Daily"
+      "id": "2",
+      "title": "Code for 5 hours a day",
+      "description": "Complete backend course and make more commits on github.",
+      "status": "Pending",
+      "category": "Daily",
+      "createdOn": "2/11/2025, 9:13:44 PM",
+      "completedOn": "Pending"
+    },
+    {
+      "id": "3",
+      "title": "Morning walk",
+      "description": "5000 steps every morning after having 1 warm glass of water instead of tea.",
+      "status": "Pending",
+      "category": "Daily",
+      "createdOn": "2/11/2025, 9:21:43 PM",
+      "completedOn": "Pending"
     }
   ]
 }

@@ -1,7 +1,5 @@
 import { Outlet } from "react-router"
 import Sidebar from "./components/Sidebar"
-import AddTask from "./pages/AddTask"
-
 
 function App() {
   return (
