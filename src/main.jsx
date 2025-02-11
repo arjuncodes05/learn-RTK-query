@@ -11,6 +11,9 @@ import apiSlice from './RTK query/apiSlice.js'
 import App from './App.jsx'
 import AddTask from './pages/AddTask.jsx'
 import Daily from './pages/Daily.jsx'
+import Weekly from './pages/Weekly.jsx'
+import Yearly from './pages/Yearly.jsx'
+import Anytime from './pages/Anytime.jsx'
 
 createRoot(document.getElementById('root')).render(
   <ApiProvider api={apiSlice}>
@@ -20,9 +23,9 @@ createRoot(document.getElementById('root')).render(
             <Route path="" element={<App/>} >
               <Route path="/" element={<Daily/>} />
               <Route path="/new" element={<AddTask/>} />
-              <Route path="/weekly" element={<h1>Weekly tasks</h1>} />
-              <Route path="/yearly" element={<h1>Yearly tasks</h1>} />
-              <Route path="/anytime" element={<h1>Anytime</h1>} />
+              <Route path="/weekly" element={<Weekly/>} />
+              <Route path="/yearly" element={<Yearly/>} />
+              <Route path="/anytime" element={<Anytime/>} />
             </Route>
           </Routes>
         </StrictMode>,
