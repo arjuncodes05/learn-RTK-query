@@ -78,7 +78,7 @@ function AddTask() {
 
         <div className="flex flex-col gap-2 mb-2">
           <Label tag="Category" htmlFor="Category" />
-          <Dropdown id="category" value={newTask.category} setValue={setNewTask} options={["Daily", "Weekly", "Yearly", "Anytime"]}/>
+          <Dropdown id="category" value={newTask.category} setValue={setNewTask} options={["Daily", "Weekly", "Monthly", "Yearly", "Anytime"]}/>
           <Error error={error?.category}/>
         </div>
 

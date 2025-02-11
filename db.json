@@ -62,6 +62,24 @@
       "category": "Anytime",
       "createdOn": "2/11/2025, 9:36:18 PM",
       "completedOn": "Pending"
+    },
+    {
+      "id": "8",
+      "title": "Go to college",
+      "description": "Get your documents and degree",
+      "status": "Pending",
+      "category": "Monthly",
+      "createdOn": "2/11/2025, 9:46:01 PM",
+      "completedOn": "Pending"
+    },
+    {
+      "id": "9",
+      "title": "Complete 9000 steps",
+      "description": "",
+      "status": "Pending",
+      "category": "Daily",
+      "createdOn": "2/11/2025, 9:46:38 PM",
+      "completedOn": "Pending"
     }
   ]
 }

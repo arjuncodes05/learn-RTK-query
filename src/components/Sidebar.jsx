@@ -9,6 +9,7 @@ function Sidebar() {
         <NavLink to="/new" className="hover:bg-slate-500">Add Task</NavLink>
         <NavLink to="/" className="hover:bg-slate-500">Daily</NavLink>
         <NavLink to="/weekly" className="hover:bg-slate-500">Weekly</NavLink>
+        <NavLink to="/monthly" className="hover:bg-slate-500">Monthly</NavLink>
         <NavLink to="/yearly" className="hover:bg-slate-500">Yearly</NavLink>
         <NavLink to="/anytime" className="hover:bg-slate-500">Any time</NavLink>
       </div>

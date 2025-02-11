@@ -14,6 +14,7 @@ import Daily from './pages/Daily.jsx'
 import Weekly from './pages/Weekly.jsx'
 import Yearly from './pages/Yearly.jsx'
 import Anytime from './pages/Anytime.jsx'
+import Monthly from './pages/Monthly.jsx'
 
 createRoot(document.getElementById('root')).render(
   <ApiProvider api={apiSlice}>
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')).render(
               <Route path="/" element={<Daily/>} />
               <Route path="/new" element={<AddTask/>} />
               <Route path="/weekly" element={<Weekly/>} />
+              <Route path="/monthly" element={<Monthly/>} />
               <Route path="/yearly" element={<Yearly/>} />
               <Route path="/anytime" element={<Anytime/>} />
             </Route>
