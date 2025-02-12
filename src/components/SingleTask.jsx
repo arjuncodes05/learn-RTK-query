@@ -31,13 +31,15 @@ function SingleTask({task, deleteFunction}) {
       <div className="my-2 flex justify-between text-xs font-semibold">
         <p
           onClick={() => setShowDetails(prev => !prev)} 
-          className="hover:shadow-sm p-1 rounded">{showDetails ? 'Less' : 'More'}</p>
-        <p>
-          Created on: <span className="font-normal">{task?.createdOn}</span>
-        </p>
-        <p>
-          Completed on: <span className="font-normal">{task?.completedOn}</span>
-        </p>
+        >{showDetails ? 'Less' : 'More'}</p>
+        <div className="flex flex-col sm:flex-row justify-between flex-wrap gap-x-8">
+          <p>
+            Created on: <span className="font-normal p-1">{task?.createdOn}</span>
+          </p>
+          <p>
+            Completed on: <span className="font-normal p-1">{task?.completedOn}</span>
+          </p>
+        </div>
       </div>
     </div>
   );

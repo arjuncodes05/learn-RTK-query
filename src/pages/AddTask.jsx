@@ -5,11 +5,11 @@ import TextArea from "../components/Add Task/TextArea";
 import Status from "../components/Add Task/Status";
 import Button from "../components/Button";
 
-import AddTaskImg from "../assets/AddTaskImg.svg"
 import Dropdown from "../components/Add Task/Dropdown";
 import Error from "../components/Add Task/Error";
 import validateForm from "../customHook/ValidateNewTask";
 import { useAddTaskMutation, useGetTasksQuery } from "../RTK query/apiSlice";
+import Image from "../components/Image";
 
 function AddTask() {
 
@@ -41,7 +41,6 @@ function AddTask() {
     await addTask({...newTask, createdOn, completedOn, id: (data.length ? `${data.length + 1}` : '1')});
     resetForm()
   }
-
 
   function resetForm(){
     setNewTask({
@@ -87,11 +86,8 @@ function AddTask() {
           <Button text="Reset" onClick={resetForm} bg="bg-red-500" onHover="hover:bg-blue-600"/>
         </div>
 
-
       </div>
-      <div className="lg:w-2/4 lg:block hidden">
-        <img src={AddTaskImg} alt="" />
-      </div>
+      <Image/>
     </div>
   );
 }
